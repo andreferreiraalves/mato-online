@@ -1,12 +1,12 @@
 const label = document.querySelector('#timer');
 const startButton = document.querySelector('#startbutton');
 
+const duration = 60 * 30;
+
 var timerStarter = false;
 var interval;
 
 startButton.addEventListener('click', function (event) {
-    var duration = 60 * 1;
-
     timerStarter = !timerStarter;
 
     startButton.innerHTML = timerStarter ? 'Stop' : 'Start';
@@ -34,14 +34,17 @@ function startTimer(duration, display) {
 
         if (--timer < 0) {
             if (interval) clearInterval(interval);
+
+            startButton.innerHTML = 'Start';
+            changeLabel('__:__');
         }
 
     }, 1000);
 }
 
-
 function changeLabel(text) {
     label.textContent = text;
+
 }
 
 // document.addEventListener('DOMContentLoaded', function (event) {
