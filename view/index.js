@@ -37,6 +37,8 @@ function startTimer(duration, display) {
 
             startButton.innerHTML = 'Start';
             changeLabel('__:__');
+            notify('Término do tempo', 'O tempo de 30 minutos acabou');
+
         }
 
     }, 1000);
@@ -47,7 +49,12 @@ function changeLabel(text) {
 
 }
 
+function notify(text, body) {
+    new Notification(text, {
+        body
+    });
+}
+
 // document.addEventListener('DOMContentLoaded', function (event) {
-//     var fiveMInutes = 60 * 5;
-//     startTimer(fiveMInutes, label);
+
 // });
