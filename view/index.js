@@ -38,7 +38,7 @@ function startTimer(duration, display) {
             startButton.innerHTML = 'Start';
             changeLabel('__:__');
             notify('Término do tempo', 'O tempo de 30 minutos acabou');
-
+            new Audio('../assets/beep-07.wav').play();
         }
 
     }, 1000);
